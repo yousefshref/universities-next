@@ -1,0 +1,46 @@
+- develop the home page ✅
+
+- design the universties page search ✅
+- develop the universties page search ✅
+
+- design login page ✅
+- design register page ✅
+
+- develop register page ✅
+- develop login page ✅
+
+
+- login with google ✅
+
+- display real universites ✅
+- filter ✅
+    - create major model ✅
+    - add it in colleges ✅
+    - update the create college command ✅
+    - create majors ✅
+    - create new colleges ✅
+    - get majors view ✅
+    - display country, cities, majors in the search page ✅
+    - update drf view to filter witvh these params and pagination ✅
+    - update react funciton also ✅
+    - that's it !!!
+
+
+- design universty details ✅
+- develop universty details ✅
+
+- get the user in te navbar and redirect to the profile ✅
+
+- reviews model ✅
+- create review inside the page ✅
+- get the reviews in the page ✅
+
+
+- redirect the login or register to search page ✅
+- delete the university signup role ✅
+
+
+-----------------------------------
+
+
+

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~@flaticon/flaticon-uicons/css/all/all";
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cairo {
+  font-family: "Cairo", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.btn-black {
+  @apply bg-blue-600 text-white py-2 px-4 rounded transition-all duration-300 hover:bg-blue-800 w-fit;
+}
