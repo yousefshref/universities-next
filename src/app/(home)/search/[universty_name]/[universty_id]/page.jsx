@@ -45,24 +45,31 @@ const page = () => {
     const [rating, setRating] = useState("5");
 
     const createReview = async () => {
-        try {
-            const response = await axios.post(`${server}/api/reviews/`, {
-                user: user?.id ? user?.id : '',
-                collage: collageDetails?.id ? collageDetails?.id : '',
-                text: text,
-                rating: rating
-            })
-            setReviews([response.data, ...reviews])
-            messageAapi.open({
-                type: 'success',
-                content: 'تم انشاء التقييم بنجاح',
-            })
-            setText('')
-        } catch (error) {
-            console.error(`Error creating review:`, error)
+        if (user?.id) {
+            try {
+                const response = await axios.post(`${server}/api/reviews/`, {
+                    user: user?.id ? user?.id : '',
+                    collage: collageDetails?.id ? collageDetails?.id : '',
+                    text: text,
+                    rating: rating
+                })
+                setReviews([response.data, ...reviews])
+                messageAapi.open({
+                    type: 'success',
+                    content: 'تم انشاء التقييم بنجاح',
+                })
+                setText('')
+            } catch (error) {
+                console.error(`Error creating review:`, error)
+                messageAapi.open({
+                    type: 'error',
+                    content: 'حدث خطأ اثناء انشاء التقييم',
+                })
+            }
+        } else {
             messageAapi.open({
                 type: 'error',
-                content: 'حدث خطأ اثناء انشاء التقييم',
+                content: 'يجب ان تسجل الدخول',
             })
         }
     }
@@ -129,7 +136,7 @@ const page = () => {
 
             {/* Swiper */}
             <Swiper
-                spaceBetween={window.innerWidth < 768 ? 20 : 80}
+                spaceBetween={40}
                 slidesPerView={'auto'}
                 navigation
                 pagination={{ clickable: true }}
@@ -174,7 +181,7 @@ const page = () => {
                 </div>
 
                 {collageDetails?.id ? (
-                    <div className="flex flex-col md:flex-row gap-8">
+                    <div className="flex flex-col md:flex-row gap-8 max-w-[1300px] mx-auto">
                         {/* Image Section */}
                         <div className="md:w-1/3">
                             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
@@ -222,7 +229,7 @@ const page = () => {
                     null
                 ) : (
                     <>
-                        <div className="flex flex-col space-y-4 w-full max-w-[800px]">
+                        <div className="flex flex-col space-y-4 w-full max-w-[800px] mx-auto">
                             <div className='flex w-full md:flex-row flex-col gap-6 items-start'>
                                 <select onChange={(e) => setRating(e.target.value)} value={rating} className="bg-gray-100 p-3 w-full rounded-xl md:max-w-[200px]">
                                     <option value="5">5 نجوم</option>

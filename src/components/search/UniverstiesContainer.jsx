@@ -52,7 +52,7 @@ const UniverstiesContainer = () => {
                                                     <p className='text-sm text-[#2D2D2D]'>تخصص</p>
                                                 </div>
                                                 <div className='flex items-end gap-1 w-full'>
-                                                    <p className='text-2xl text-[#2D2D2D] font-bold'>{uni.rating}</p>
+                                                    <p className='text-2xl text-[#2D2D2D] font-bold'>{uni?.reviews_numbers}</p>
                                                     <p className='text-sm text-[#2D2D2D]'>رأي طالب</p>
                                                 </div>
                                             </div>

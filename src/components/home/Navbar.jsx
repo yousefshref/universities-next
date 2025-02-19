@@ -32,10 +32,10 @@ const Navbar = () => {
             {user?.id ? (
                 <button className="hidden md:flex items-center gap-2 text-[#7C7C7C]">
                     <i className="fi fi-rr-user"></i>
-                    <p>{user?.first_name} {user?.last_name}</p>
+                    <p>{user?.email}</p>
                 </button>
             ) : (
-                <button className="hidden md:flex items-center gap-2 text-[#7C7C7C]">
+                <button onClick={() => router.push('/login')} className="hidden md:flex items-center gap-2 text-[#7C7C7C]">
                     <i className="-mb-1.5 fi fi-rr-sign-in-alt"></i>
                     <p>تسجيل الدخول</p>
                 </button>

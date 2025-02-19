@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const page = () => {
-    const { contextHolder, email, setEmail, password, setPassword, loading, login } = React.useContext(AuthContextProvider);
+    const { contextHolder, email, setEmail, password, setPassword, loading, login, googleLogin } = React.useContext(AuthContextProvider);
     const router = useRouter()
     return (
         <div className='h-screen flex items-center gap-5'>
