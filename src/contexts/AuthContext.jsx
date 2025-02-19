@@ -148,6 +148,10 @@ const AuthContext = ({ children }) => {
             })
         } catch (err) {
             console.log(err)
+            messageApi.open({
+                type: 'error',
+                content: 'حدث خطأ اثناء تسجيل الدخول',
+            })
         } finally {
             setLoading(false)
         }
