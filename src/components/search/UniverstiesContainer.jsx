@@ -29,7 +29,7 @@ const UniverstiesContainer = () => {
                                     >
                                         {/* Right section: Image and details */}
                                         <div className='flex sm:flex-row flex-col sm:items-center items-start gap-4 md:col-span-2 col-span-3'>
-                                            <img src="/images/universty-image.png" alt="universty image" />
+                                            <img src={uni?.image} alt="universty image" />
                                             <div className='flex flex-col gap-3 w-full'>
                                                 <div className='flex lg:flex-row flex-col lg:items-center items-start justify-between'>
                                                     <p className='text-xl font-bold text-[#2F2F2F]'>{uni.university_name}</p>
